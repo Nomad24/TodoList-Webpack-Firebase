@@ -1,6 +1,5 @@
 import {TransformService} from "./transform.service";
 import {add} from "./addList";
-import {element} from "./elements";
 import * as handlerbtn from './handlerbtn';
 export class Search {
     constructor(query) {
@@ -12,7 +11,8 @@ export class Search {
             .then(function (response) {
                 console.log(response);
                 add.addList(user);
-                element.addInput.value = "";
+                //element.addInput.value = "";
+                document.querySelector("#add-input").value = "";
                 handlerbtn.addhandle(response.data.name);
             })
             .catch(function (error) {
